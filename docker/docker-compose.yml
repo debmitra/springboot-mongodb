@@ -2,3 +2,8 @@ bootmongo:
   image: springboot-mongo/gs-accessing-mongodb-data-rest
   ports:
    - "80:9044"
+
+mymongodb:
+  image: mongo
+  ports:
+   - "27017:27017"
