@@ -1,0 +1,6 @@
+server:
+  port: 9044
+
+---
+spring:
+  profiles: cloud
