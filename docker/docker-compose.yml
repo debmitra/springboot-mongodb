@@ -1,9 +1,20 @@
-bootmongo:
-  image: springboot-mongo/gs-accessing-mongodb-data-rest
-  ports:
-   - "80:9044"
+version: '2'
 
-mymongodb:
-  image: mongo
-  ports:
-   - "27017:27017"
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  mongodb:
+    image: mongo
+    ports:
+     - "27017:27017"
+    networks:
+     - app-tier
+
+  bootmongo:
+    image: springboot-mongo/gs-accessing-mongodb-data-rest
+    ports:
+     - "80:9044"
+    networks:
+     - app-tier
